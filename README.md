@@ -9,7 +9,7 @@
 * Prompt: `hello_prompt(name)` template
 * Transport: stdio (works with VS Code / Copilot MCP)
 
-## TL;DR (Quick Start)
+## Quick Start
 
 ```powershell
 irm https://astral.sh/uv/install.ps1 | iex
@@ -87,6 +87,51 @@ Call tool `say_hello` with payload `{ "name": "David" }` → `Hello, David!`.
 Resource request example: `hello://Maria` → `Hello (resource), Maria!`
 
 Prompt template: `hello_prompt` with `{ "name": "Ana" }` → prompt text.
+
+## Available Tools
+
+| Name       | Kind    | Description                       | Parameters                    | Example Invocation (args)              | Example Result        |
+|------------|---------|-----------------------------------|--------------------------------|----------------------------------------|-----------------------|
+| say_hello  | tool    | Returns a greeting for a given name | name: string (required)       | `{ "name": "Andrei" }`                | `Hello, Andrei!`      |
+| hello://{name} | resource | Dynamic greeting resource        | path variable: name           | `hello://Marina`                       | `Hello (resource), Marina!` |
+| hello_prompt | prompt | Produces a polite greeting prompt | name: string (required)       | `{ "name": "Team" }` (prompt request) | `Please greet Team politely.` |
+
+Notes:
+
+* Tools are invoked via the MCP tool call interface.
+* Resources are fetched by requesting the URI.
+* Prompts return a template string you can feed into an LLM.
+
+## Prompt Examples
+
+Below are natural language queries you can type to Copilot (or any MCP-aware client) that are likely to trigger the registered tool / prompt:
+
+Plain tool activation examples:
+
+1. "Use the minimal-mcp-server to say hello to Andrei."
+2. "Call the say_hello tool with name = Marina."
+3. "Ask the MCP server to greet our guest Ivana."
+
+Prompt template usage examples:
+
+1. "Generate the hello_prompt for name=Team."
+2. "Get the polite greeting prompt for Ana using hello_prompt."
+
+Chained example (prompt then LLM):
+
+1. "Get the hello_prompt for 'New Contributors' and then draft a welcome message based on it."
+
+Resource fetch examples:
+
+1. "Fetch resource hello://Milan"
+2. "Load the greeting resource for Sara (hello://Sara)."
+
+If the client UI allows explicit tool selection, choose `say_hello` and provide JSON args:
+
+```json
+{ "name": "Andrei" }
+```
+
 
 ## Developer Onboarding (Detailed)
 
