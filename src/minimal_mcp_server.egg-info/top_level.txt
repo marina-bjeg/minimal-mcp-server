@@ -1,2 +1,0 @@
-magentic_ui_community_mcp_server
-mcp
