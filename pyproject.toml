@@ -1,0 +1,15 @@
+[project]
+name = "minimal-mcp-server"
+version = "0.1.0"
+description = "Minimal MCP server (tools/resources/prompts) open for anyone to use"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp[cli]>=1.2.0",  # include CLI extras (installs typer)
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+# (opciono) dodatne postavke za uv

@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "minimal-mcp-server": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "mcp", "run", "${workspaceFolder}/server.py"]
+    }
+  }
+}

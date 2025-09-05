@@ -1,0 +1,5 @@
+# Minimal dependencies for the Hello World MCP server
+# If pip in the venv is missing, first run: python -m ensurepip --upgrade
+# Then: python -m pip install --upgrade pip
+
+mcp[cli]>=1.2.0

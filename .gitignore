@@ -1,0 +1,17 @@
+# Python / venv / uv
+__pycache__/
+*.pyc
+.venv/
+uv.lock
+
+# Build / packaging artifacts
+*.egg-info/
+dist/
+build/
+*.log
+
+# IDE / project metadata (keep mcp.json)
+
+# VS Code
+.vscode/*
+!.vscode/mcp.json

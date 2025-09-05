@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/magentic_ui_community_mcp_server/__init__.py
+src/magentic_ui_community_mcp_server/__main__.py
+src/magentic_ui_community_mcp_server/mcp_server.py
+src/mcp_hello.egg-info/PKG-INFO
+src/mcp_hello.egg-info/SOURCES.txt
+src/mcp_hello.egg-info/dependency_links.txt
+src/mcp_hello.egg-info/requires.txt
+src/mcp_hello.egg-info/top_level.txt
